@@ -1,1 +1,115 @@
-"use client";import React,{useState}from"react";import{motion}from"framer-motion";export default function Hero(){const[e,setE]=useState(false);return(<section className="relative min-h-[92vh] bg-[#0A0A0A] text-white border-b border-[#262626] flex items-center overflow-hidden"><div className="relative lg:absolute lg:top-0 lg:right-0 lg:bottom-0 w-full lg:w-[58%] h-[420px] sm:h-[520px] lg:h-full order-first lg:order-none">{!e&&<img src="/images/hero-nib.jpg" alt="GRASTER FLOWS" onError={()=>setE(true)} className="w-full h-full object-cover object-center"/>}<div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/45 to-transparent pointer-events-none"/><div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/30 pointer-events-none"/><div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent pointer-events-none"/><div className="absolute top-6 right-6 z-10 hidden sm:flex items-center gap-3 font-mono text-[11px] text-white/70 bg-[#0A0A0A]/60 px-3 py-1.5 border border-white/15"><span className="text-[#D4FF00]">+</span><span className="tracking-widest">FLOWS // 10MM &amp; 18MM</span></div><div className="absolute bottom-6 right-6 left-6 lg:left-auto z-10 flex justify-between lg:justify-end items-center gap-6 font-mono text-[11px] text-white/85 bg-[#0A0A0A]/70 px-4 py-2 border border-white/15"><span className="tracking-wider">FLOWS SERIES // HIGH-FLOW SQUEEZE MOPS</span><span className="text-[#D4FF00] font-bold">GRASTER®</span></div></div><div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-20 w-full"><motion.div initial={{opacity:0,y:18}} animate={{opacity:1,y:0}} transition={{duration:0.45}} className="max-w-2xl flex flex-col items-start"><div className="inline-block border border-[#262626] bg-[#121212]/90 px-3 py-1.5 mb-8"><span className="font-mono text-xs tracking-widest text-[#888888]">[ EST. 2020 // STREET &amp; STUDIO GRADE ]</span></div><h1 className="text-5xl sm:text-7xl xl:text-[84px] font-black uppercase tracking-tight leading-[0.93] mb-6 drop-shadow-2xl">ENGINEERED<br/>FOR THE<br/>STREETS.</h1><p className="text-base sm:text-lg text-white/75 max-w-lg leading-relaxed mb-10">High-opacity paint markers, squeeze mops, and archival acrylics built by writers, for writers. Start your graffiti life.</p><div className="flex flex-wrap gap-4 mb-16"><a href="#products" className="bg-white text-[#0A0A0A] hover:bg-[#D4FF00] font-mono text-xs sm:text-sm font-bold tracking-widest uppercase px-8 py-4 transition-colors">EXPLORE LINEUP</a><a href="#wholesale" className="border border-white/40 hover:border-white bg-[#0A0A0A]/60 text-white font-mono text-xs sm:text-sm font-bold tracking-widest uppercase px-8 py-4 transition-colors">WHOLESALE INQUIRY</a></div><div className="grid grid-cols-3 gap-6 sm:gap-10 pt-8 border-t border-white/15 w-full max-w-lg"><div><div className="text-xl sm:text-2xl font-black tracking-tight">07+</div><div className="font-mono text-[11px] tracking-widest text-[#888888] uppercase mt-1">SERIES</div></div><div className="border-l border-white/15 pl-6"><div className="text-xl sm:text-2xl font-black tracking-tight">36+</div><div className="font-mono text-[11px] tracking-widest text-[#888888] uppercase mt-1">PIGMENTS</div></div><div className="border-l border-white/15 pl-6"><div className="text-xl sm:text-2xl font-black tracking-tight">ALL-SURFACE</div><div className="font-mono text-[11px] tracking-widest text-[#888888] uppercase mt-1">INK SYSTEM</div></div></div></motion.div></div></section>);}
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
+
+export default function Hero() {
+  return (
+    <section className="relative min-h-[88vh] bg-[#0A0A0A] text-white border-b border-[#262626] flex items-center overflow-hidden pt-20">
+      {/* Subtle architectural grid background */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16 lg:py-24 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        {/* Left Visual Card: Hidden on mobile to prevent overlap, shown cleanly on desktop */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="hidden lg:block lg:col-span-5 relative"
+        >
+          <div className="relative aspect-[4/5] w-full bg-[#121212] border border-[#262626] overflow-hidden">
+            <img
+              src="/images/hero-nib.jpg"
+              alt="GRASTER Professional Graffiti Markers & Squeeze Mops"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/80 via-transparent to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 border border-[#262626] bg-[#0A0A0A]/90 backdrop-blur-sm p-3.5 font-mono text-[10px] leading-relaxed tracking-widest uppercase">
+              <div className="text-[#D4FF00] font-bold">FLOWS SERIES //</div>
+              <div className="text-white/80">HIGH-FLOW SQUEEZE MOPS &amp; ARCHIVAL PAINT</div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Main Typography & CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="lg:col-span-7 flex flex-col justify-center"
+        >
+          <div className="inline-block w-fit border border-[#262626] bg-[#121212] px-3.5 py-2 font-mono text-[11px] tracking-widest text-[#D4FF00] uppercase mb-6">
+            [ EST. 2020 // STREET &amp; STUDIO GRADE ]
+          </div>
+
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.92] mb-6">
+            ENGINEERED
+            <br />
+            FOR THE
+            <br />
+            STREETS.
+          </h1>
+
+          <p className="text-base sm:text-lg text-white/75 max-w-xl leading-relaxed mb-8">
+            High-opacity paint markers, squeeze mops, and archival acrylics built by writers, for writers. Start your graffiti life.
+          </p>
+
+          {/* Mobile Hero Product Strip (visible only on mobile/tablet) */}
+          <div className="lg:hidden mb-8 border border-[#262626] bg-[#121212] overflow-hidden">
+            <div className="relative h-48 w-full">
+              <img
+                src="/images/hero-nib.jpg"
+                alt="GRASTER Graffiti Markers"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-2.5 left-2.5 bg-[#0A0A0A]/90 border border-[#262626] px-2.5 py-1 font-mono text-[10px] text-[#D4FF00] uppercase tracking-widest">
+                FLOWS &amp; WILDER // 0.7MM–50MM
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <a
+              href="#products"
+              className="bg-white text-[#0A0A0A] hover:bg-[#D4FF00] font-mono text-xs font-bold tracking-widest uppercase px-7 py-4 flex items-center justify-center gap-2 transition-colors"
+            >
+              <span>EXPLORE LINEUP</span>
+              <ArrowDownRight className="w-4 h-4" />
+            </a>
+            <a
+              href="#wholesale"
+              className="border border-[#262626] bg-[#121212] hover:border-[#D4FF00] text-white hover:text-[#D4FF00] font-mono text-xs font-bold tracking-widest uppercase px-7 py-4 flex items-center justify-center gap-2 transition-colors"
+            >
+              <span>WHOLESALE INQUIRY</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          {/* Key Metrics Bar */}
+          <div className="grid grid-cols-3 gap-4 pt-8 border-t border-[#262626] font-mono">
+            <div>
+              <div className="text-2xl sm:text-3xl font-black text-white">07+</div>
+              <div className="text-[10px] text-[#888888] tracking-widest uppercase mt-1">HARDWARE LINES</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-black text-white">36+</div>
+              <div className="text-[10px] text-[#888888] tracking-widest uppercase mt-1">HIGH-OPACITY COLORS</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-black text-[#D4FF00]">ALL-SURFACE</div>
+              <div className="text-[10px] text-[#888888] tracking-widest uppercase mt-1">CONCRETE · METAL · GLASS</div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
