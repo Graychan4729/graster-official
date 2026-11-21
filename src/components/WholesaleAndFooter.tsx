@@ -94,7 +94,7 @@ export default function WholesaleAndFooter() {
                   </div>
                 </motion.div>
               ) : (
-                <form name="graster-wholesale" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-5">
+                <form name="graster-wholesale" method="POST" onSubmit={handleSubmit} className="space-y-5">
                   <input type="hidden" name="form-name" value="graster-wholesale" />
                   <div className="flex items-center justify-between border-b border-[#262626] pb-4 mb-2">
                     <span className="font-mono text-xs font-bold uppercase tracking-widest text-white">DEALER &amp; DISTRIBUTOR APPLICATION</span>
