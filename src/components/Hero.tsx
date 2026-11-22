@@ -47,7 +47,7 @@ export default function Hero() {
           className="lg:col-span-7 flex flex-col justify-center"
         >
           <div className="inline-block w-fit border border-[#262626] bg-[#121212] px-3.5 py-2 font-mono text-[11px] tracking-widest text-[#D4FF00] uppercase mb-6">
-            [ EST. 2020 // STREET &amp; STUDIO GRADE ]
+            [ GRA/FFITI MA/STER // EST. 2020 ]
           </div>
 
           <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-[0.92] mb-6">
