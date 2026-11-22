@@ -40,7 +40,22 @@ export default function WholesaleAndFooter() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const fd = new FormData(e.currentTarget as HTMLFormElement);
+      const payload: Record<string, any> = Object.fromEntries(fd.entries());
+      payload.access_key = "c351e614-37a9-42bd-a742-fb31ab8898ca";
+      payload.subject = "New GRASTER Wholesale Inquiry";
+      payload.from_name = "GRASTER Official Website";
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      });
+    } catch (err) {
+      console.error("Web3Forms submit error:", err);
+    }
     e.preventDefault();
     const refId = `GRS-${Math.floor(100000 + Math.random() * 900000)}`;
     setSubmittedCode(refId);
